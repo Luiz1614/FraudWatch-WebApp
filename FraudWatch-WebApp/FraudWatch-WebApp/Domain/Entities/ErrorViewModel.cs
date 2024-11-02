@@ -1,4 +1,4 @@
-namespace FraudWatch_WebApp.Models
+namespace FraudWatch_WebApp.Domain.Entities
 {
     public class ErrorViewModel
     {

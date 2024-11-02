@@ -1,0 +1,85 @@
+﻿@model IEnumerable<FraudWatch.Domain.Entities.DentistaEntity>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    tr:hover {
+        background-color: #e9ecef;
+    }
+
+    a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CRO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().DataNascimento)
+            </th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CRO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CPF)
+                </td>
+                <td>
+                    @item.DataNascimento.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.UsuarioId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.UsuarioId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.UsuarioId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

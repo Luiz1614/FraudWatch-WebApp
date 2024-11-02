@@ -1,4 +1,4 @@
-using FraudWatch_WebApp.Models;
+using FraudWatch_WebApp.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
