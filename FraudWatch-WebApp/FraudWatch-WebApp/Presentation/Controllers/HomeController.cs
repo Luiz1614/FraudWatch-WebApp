@@ -2,7 +2,7 @@ using FraudWatch_WebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace FraudWatch_WebApp.Controllers
+namespace FraudWatch_WebApp.Presentation.Controllers
 {
     public class HomeController : Controller
     {

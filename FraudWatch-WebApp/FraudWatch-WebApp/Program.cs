@@ -1,4 +1,21 @@
+using FraudWatch.Application.Interfaces;
+using FraudWatch.Application.Services;
+using FraudWatch.Infraestructure.Data.Repositories;
+using FraudWatch_CadastroUsuarios.Infraestructure.Data.AppData;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<ApplicationContext>(options =>
+{
+    options.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
+});
+
+builder.Services.AddTransient<IDentistaRepository, DentistaRepository>();
+builder.Services.AddTransient<IAnalistaRepository, AnalistaRepository>();
+
+builder.Services.AddScoped<IDentistaApplicationService, DentistaApplicationService>();
+builder.Services.AddScoped<IAnalistaApplicationService, AnalistaApplicationService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
