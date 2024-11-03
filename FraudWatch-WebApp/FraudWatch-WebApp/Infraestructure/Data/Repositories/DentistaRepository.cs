@@ -28,13 +28,14 @@ public class DentistaRepository : IDentistaRepository
         return _context.Set<DentistaEntity>().FirstOrDefault(d => d.CRO == cro);
     }
 
-    public void AddDentista(DentistaEntity entity)
+    public DentistaEntity AddDentista(DentistaEntity entity)
     {
         _context.Add(entity);
         _context.SaveChanges();
+        return entity;
     }
 
-    public void DeleteDentistaById(int id)
+    public DentistaEntity DeleteDentistaById(int id)
     {
         var entity = _context.Set<DentistaEntity>().Find(id);
         if (entity != null)
@@ -42,9 +43,11 @@ public class DentistaRepository : IDentistaRepository
             _context.Remove(entity);
             _context.SaveChanges();
         }
+
+        return entity;
     }
 
-    public void UpdateDentistaById(int id, DentistaEntity entity)
+    public DentistaEntity UpdateDentistaById(int id, DentistaEntity entity)
     {
         var existingEntity = _context.Set<DentistaEntity>().Find(id);
 
@@ -53,12 +56,12 @@ public class DentistaRepository : IDentistaRepository
             existingEntity.Nome = entity.Nome;
             existingEntity.Email = entity.Email;
             existingEntity.CPF = entity.CPF;
-            existingEntity.DataNascimento = entity.DataNascimento;
             existingEntity.CRO = entity.CRO;
 
             _context.Entry(existingEntity).State = EntityState.Modified;
-
             _context.SaveChanges();
         }
+
+        return existingEntity;
     }
 }

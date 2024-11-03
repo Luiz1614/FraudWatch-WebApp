@@ -40,5 +40,54 @@ public class DentistaController : Controller
         return View(dentistaDTO);
     }
 
+    [HttpGet]
+    public IActionResult Details(int id)
+    {
+        var dentista = _dentistaApplicationService.GetById(id);
+
+        return View(dentista);
+    }
+
+    [HttpGet]
+    public IActionResult Delete(int id)
+    {
+        var dentista = _dentistaApplicationService.GetById(id);
+
+        return View(dentista);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteForm(int id)
+    {
+        var dentista = _dentistaApplicationService.DeleteById(id);
+
+        if (dentista == null)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        var dentista = _dentistaApplicationService.GetById(id);
+
+        return View(dentista);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(int id, DentistaDTO dentistaDTO)
+    {
+        if (ModelState.IsValid)
+        {
+            _dentistaApplicationService.Update(id, dentistaDTO);
+
+            return RedirectToAction("Index");
+        }
+
+        return View(dentistaDTO);
+    }
 
 }

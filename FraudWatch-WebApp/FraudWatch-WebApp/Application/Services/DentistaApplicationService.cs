@@ -15,22 +15,20 @@ public class DentistaApplicationService : IDentistaApplicationService
         _dentistaRepository = dentistaRepository;
     }
 
-    public void Add(DentistaDTO dentistaDTO)
+    public DentistaEntity Add(DentistaDTO dentistaDTO)
     {
-        var dentistaEntity = new DentistaEntity
+        return _dentistaRepository.AddDentista(new DentistaEntity
         {
             Nome = dentistaDTO.Nome,
             Email = dentistaDTO.Email,
             CPF = dentistaDTO.CPF,
             CRO = dentistaDTO.CRO
-        };
-
-        _dentistaRepository.AddDentista(dentistaEntity);
+        });
     }
 
-    public void DeleteById(int id)
+    public DentistaEntity DeleteById(int id)
     {
-        _dentistaRepository.DeleteDentistaById(id);
+        return _dentistaRepository.DeleteDentistaById(id);
     }
 
     public IEnumerable<DentistaEntity> GetAll()
@@ -48,9 +46,9 @@ public class DentistaApplicationService : IDentistaApplicationService
         return _dentistaRepository.GetDentistaById(id);
     }
 
-    public void Update(int id, DentistaDTO dentistaDTO)
+    public DentistaEntity Update(int id, DentistaDTO dentistaDTO)
     {
-        _dentistaRepository.UpdateDentistaById(id, new DentistaEntity
+        return _dentistaRepository.UpdateDentistaById(id, new DentistaEntity
         {
             Nome = dentistaDTO.Nome,
             Email = dentistaDTO.Email,

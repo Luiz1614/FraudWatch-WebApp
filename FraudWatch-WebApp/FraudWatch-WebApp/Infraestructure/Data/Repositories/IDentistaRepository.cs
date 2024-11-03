@@ -7,7 +7,7 @@ public interface IDentistaRepository
     IEnumerable<DentistaEntity> GetAllDentistas();
     DentistaEntity GetDentistaById(int id);
     DentistaEntity GetDentistaByCro(string cro);
-    void AddDentista(DentistaEntity entity);
-    void UpdateDentistaById(int id, DentistaEntity entity);
-    void DeleteDentistaById(int id);
+    DentistaEntity AddDentista(DentistaEntity entity);
+    DentistaEntity UpdateDentistaById(int id, DentistaEntity entity);
+    DentistaEntity DeleteDentistaById(int id);
 }

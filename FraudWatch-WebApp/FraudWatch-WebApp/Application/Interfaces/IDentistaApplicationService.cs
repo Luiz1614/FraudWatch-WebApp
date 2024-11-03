@@ -8,7 +8,7 @@ public interface IDentistaApplicationService
     IEnumerable<DentistaEntity> GetAll();
     DentistaEntity GetById(int id);
     DentistaEntity GetByCro(string cro);
-    void Add(DentistaDTO dentistaDTO);
-    void Update(int id, DentistaDTO dentistaDTO);
-    void DeleteById(int id);
+    DentistaEntity Add(DentistaDTO dentistaDTO);
+    DentistaEntity Update(int id, DentistaDTO dentistaDTO);
+    DentistaEntity DeleteById(int id);
 }
