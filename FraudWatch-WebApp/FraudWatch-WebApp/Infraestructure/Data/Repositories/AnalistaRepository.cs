@@ -13,20 +13,22 @@ public class AnalistaRepository : IAnalistaRepository
         _context=context;
     }
 
-    public void AddAnalista(AnalistaEntity entity)
+    public AnalistaEntity AddAnalista(AnalistaEntity entity)
     {
         _context.Add(entity);
         _context.SaveChanges();
+        return entity;
     }
 
-    public void DeleteAnalistaById(int id)
+    public AnalistaEntity DeleteAnalistaById(int id)
     {
         var entity = _context.Set<AnalistaEntity>().Find(id);
         if (entity != null)
         {
-            _context.Remove(entity);
+            _context.Set<AnalistaEntity>().Remove(entity);
             _context.SaveChanges();
         }
+        return entity;
     }
 
     public IEnumerable<AnalistaEntity> GetAllAnalistas()
@@ -44,7 +46,7 @@ public class AnalistaRepository : IAnalistaRepository
         return _context.Set<AnalistaEntity>().Find(id);
     }
 
-    public void UpdateAnalistaByID(int id, AnalistaEntity entity)
+    public AnalistaEntity UpdateAnalistaByID(int id, AnalistaEntity entity)
     {
         var existingEntity = _context.Set<AnalistaEntity>().Find(id);
 
@@ -53,12 +55,10 @@ public class AnalistaRepository : IAnalistaRepository
             existingEntity.Nome = entity.Nome;
             existingEntity.Email = entity.Email;
             existingEntity.CPF = entity.CPF;
-            existingEntity.DataNascimento = entity.DataNascimento;
             existingEntity.Departamento = entity.Departamento;
-
-            _context.Entry(existingEntity).State = EntityState.Modified;
-
             _context.SaveChanges();
         }
+
+        return existingEntity;
     }
 }

@@ -1,0 +1,50 @@
+﻿@model FraudWatch.Application.DTOs.AnalistaDTO
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5">
+
+    <h2 class="text-center text-primary mb-4">Cadastro de Analista</h2>
+
+    <form asp-action="Create" class="border p-4 bg-light shadow-sm rounded">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Nome" class="font-weight-bold">Nome</label>
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Departamento" class="font-weight-bold">Departamento</label>
+            <input asp-for="Departamento" class="form-control" />
+            <span asp-validation-for="Departamento" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="font-weight-bold">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CPF" class="font-weight-bold">CPF</label>
+            <input asp-for="CPF" class="form-control" />
+            <span asp-validation-for="CPF" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataNascimento" class="font-weight-bold">Data de Nascimento</label>
+            <input asp-for="DataNascimento" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Cadastrar" class="btn btn-primary btn-block font-weight-bold" />
+        </div>
+    </form>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="text-primary font-weight-bold">Voltar à Lista</a>
+    </div>
+</div>

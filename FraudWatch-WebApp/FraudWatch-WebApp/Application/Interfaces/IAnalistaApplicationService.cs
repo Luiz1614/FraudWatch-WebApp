@@ -8,7 +8,7 @@ public interface IAnalistaApplicationService
     IEnumerable<AnalistaEntity> GetAll();
     AnalistaEntity GetById(int id);
     AnalistaEntity GetByDepartamento(string departamento);
-    void Add(AnalistaDTO analistaDTO);
-    void Update(int id, AnalistaDTO analistaDTO);
-    void DeleteById(int id);
+    AnalistaEntity Add(AnalistaDTO analistaDTO);
+    AnalistaEntity Update(int id, AnalistaDTO analistaDTO);
+    AnalistaEntity DeleteById(int id);
 }

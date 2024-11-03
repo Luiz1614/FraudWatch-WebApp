@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FraudWatch.Domain.Entities.AnalistaEntity>
+
+<div>
+    <h2 class="text-center mb-4">Analistas</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>DEPARTAMENTO</th>
+                <th>E-MAIL</th>
+                <th>CPF</th>
+                <th>DATA NASCIMENTO</th>
+                <th>AÇÕES</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Departamento)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CPF)</td>
+                    <td>@item.DataNascimento.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-sm btn-info">Detalhes</a>
+                        <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-sm btn-warning">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@item.UsuarioId" class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Create" class="btn btn-primary mb-3">Adicionar Novo Analista</a>
+</div>

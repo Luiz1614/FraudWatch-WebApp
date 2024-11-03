@@ -14,22 +14,20 @@ public class AnalistaApplicationService : IAnalistaApplicationService
         _analistaRepository=analistaRepository;
     }
 
-    public void Add(AnalistaDTO analistaDTO)
+    public AnalistaEntity Add(AnalistaDTO analistaDTO)
     {
-        var analistaEntity = new AnalistaEntity
+        return _analistaRepository.AddAnalista(new AnalistaEntity
         {
             Nome = analistaDTO.Nome,
             Email = analistaDTO.Email,
             CPF = analistaDTO.CPF,
             Departamento = analistaDTO.Departamento
-        };
-
-        _analistaRepository.AddAnalista(analistaEntity);
+        });
     }
 
-    public void DeleteById(int id)
+    public AnalistaEntity DeleteById(int id)
     {
-        _analistaRepository.DeleteAnalistaById(id);
+        return _analistaRepository.DeleteAnalistaById(id);
     }
 
     public IEnumerable<AnalistaEntity> GetAll()
@@ -47,9 +45,9 @@ public class AnalistaApplicationService : IAnalistaApplicationService
         return _analistaRepository.GetAnalistaById(id);
     }
 
-    public void Update(int id, AnalistaDTO analistaDTO)
+    public AnalistaEntity Update(int id, AnalistaDTO analistaDTO)
     {
-        _analistaRepository.UpdateAnalistaByID(id, new AnalistaEntity
+        return _analistaRepository.UpdateAnalistaByID(id, new AnalistaEntity
         {
             Nome = analistaDTO.Nome,
             Email = analistaDTO.Email,
