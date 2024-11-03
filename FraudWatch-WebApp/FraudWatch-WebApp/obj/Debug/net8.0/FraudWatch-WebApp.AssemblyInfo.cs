@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FraudWatch-WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfe09cd2779610150a254af5753abcbaf240539d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cca005d785b5367b687a9c65e0638ad9a1ecccfa")]
 [assembly: System.Reflection.AssemblyProductAttribute("FraudWatch-WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FraudWatch-WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

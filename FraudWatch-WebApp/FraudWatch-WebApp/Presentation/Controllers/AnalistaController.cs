@@ -56,4 +56,38 @@ public class AnalistaController : Controller
         return View(analista);
     }
 
+    [HttpPost]
+    public IActionResult DeleteForm(int id)
+    {
+        var analista = _analistaApplicationService.DeleteById(id);
+
+        if (analista == null)
+        {
+            return NotFound();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public IActionResult Edit(int id)
+    {
+        var analista = _analistaApplicationService.GetById(id);
+
+        return View(analista);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(int id, AnalistaDTO analistaDTO)
+    {
+        if (ModelState.IsValid)
+        {
+            _analistaApplicationService.Update(id, analistaDTO);
+
+            return RedirectToAction("Index");
+        }
+
+        return View(analistaDTO);
+    }
+
 }
