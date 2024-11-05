@@ -10,7 +10,6 @@
                 <th>CRO</th>
                 <th>E-MAIL</th>
                 <th>CPF</th>
-                <th>DATA NASCIMENTO</th>
                 <th>AÇÕES</th>
             </tr>
         </thead>
@@ -22,7 +21,6 @@
                     <td>@Html.DisplayFor(modelItem => item.CRO)</td>
                     <td>@Html.DisplayFor(modelItem => item.Email)</td>
                     <td>@Html.DisplayFor(modelItem => item.CPF)</td>
-                    <td>@item.DataNascimento.ToString("dd/MM/yyyy")</td>
                     <td>
                         <a asp-action="Details" asp-route-id="@item.UsuarioId" class="btn btn-sm btn-info">Detalhes</a>
                         <a asp-action="Edit" asp-route-id="@item.UsuarioId" class="btn btn-sm btn-warning">Editar</a>

@@ -33,10 +33,6 @@ namespace FraudWatch_WebApp.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
-                    b.Property<string>("DataNascimento")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(10)");
-
                     b.Property<string>("Departamento")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
@@ -69,10 +65,6 @@ namespace FraudWatch_WebApp.Migrations
                     b.Property<string>("CRO")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
-
-                    b.Property<string>("DataNascimento")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(10)");
 
                     b.Property<string>("Email")
                         .IsRequired()

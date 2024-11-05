@@ -12,9 +12,6 @@ public class DentistaDTO
     [EmailAddress(ErrorMessage = $"O campo {nameof(Email)} é inválido.")]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = $"O campo {nameof(DataNascimento)} é obrigatório.")]
-    public DateTime DataNascimento { get; set; }
-
     [Required(ErrorMessage = $"O campo {nameof(CPF)} é obrigatório.")]
     [StringLength(11)]
     public string CPF { get; set; }

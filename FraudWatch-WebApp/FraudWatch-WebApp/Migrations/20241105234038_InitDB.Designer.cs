@@ -11,8 +11,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace FraudWatch_WebApp.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20241102180924_initdb")]
-    partial class initdb
+    [Migration("20241105234038_InitDB")]
+    partial class InitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,10 +35,6 @@ namespace FraudWatch_WebApp.Migrations
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
-
-                    b.Property<string>("DataNascimento")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(10)");
 
                     b.Property<string>("Departamento")
                         .IsRequired()
@@ -72,10 +68,6 @@ namespace FraudWatch_WebApp.Migrations
                     b.Property<string>("CRO")
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
-
-                    b.Property<string>("DataNascimento")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(10)");
 
                     b.Property<string>("Email")
                         .IsRequired()

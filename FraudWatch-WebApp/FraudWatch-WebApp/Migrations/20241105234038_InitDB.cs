@@ -5,7 +5,7 @@
 namespace FraudWatch_WebApp.Migrations
 {
     /// <inheritdoc />
-    public partial class initdb : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,8 +19,7 @@ namespace FraudWatch_WebApp.Migrations
                     Departamento = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    CPF = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    DataNascimento = table.Column<string>(type: "NVARCHAR2(10)", nullable: false)
+                    CPF = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -36,8 +35,7 @@ namespace FraudWatch_WebApp.Migrations
                     CRO = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Nome = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    CPF = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    DataNascimento = table.Column<string>(type: "NVARCHAR2(10)", nullable: false)
+                    CPF = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>
                 {
