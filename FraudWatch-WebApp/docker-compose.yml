@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  fraudwatch-webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7241:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=your_server;Database=your_database;User Id=rm553542;Password=290405;
+    restart: unless-stopped
